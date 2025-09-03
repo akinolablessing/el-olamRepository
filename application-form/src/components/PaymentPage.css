@@ -1,0 +1,128 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.payment-page {
+    background: #f9f9f9;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.header-text h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d3e96;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.cac-number {
+    background: #2d3e96;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Account Section */
+.account-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.account-section h2 {
+    font-size: 18px;
+    color: #2d3e96;
+    margin-bottom: 15px;
+}
+
+.account-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.account-table th,
+.account-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.account-table th {
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+.account-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* Upload Button */
+.upload-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.upload-btn {
+    background: #2d3e96;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.upload-btn:hover {
+    background: #1b2970;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .account-table th,
+    .account-table td {
+        font-size: 14px;
+    }
+}

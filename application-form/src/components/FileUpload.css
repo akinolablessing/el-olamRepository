@@ -1,0 +1,181 @@
+
+.upload-container {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 30px auto;
+    font-family: "Arial", sans-serif;
+}
+
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+
+.upload-container label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.input:focus {
+    border-color: #0056b3;
+}
+
+.input-error {
+    border-color: red;
+}
+
+
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+.drop-area {
+    border: 2px dashed #999;
+    padding: 20px;
+    text-align: center;
+    color: #555;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.drop-area.drag-over {
+    background: #e6f7ff;
+    border-color: #007bff;
+}
+
+.drop-area .icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+    color: #007bff;
+}
+
+.browse-text {
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.browse-text input {
+    display: none;
+}
+
+.hint {
+    font-size: 12px;
+    color: #777;
+    margin-top: 6px;
+}
+
+
+.file-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-icon {
+    color: #007bff;
+    width: 28px;
+    height: 28px;
+}
+
+.file-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.file-size {
+    font-size: 12px;
+    color: #555;
+}
+
+
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #dc3545;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.remove-btn:hover {
+    color: #a71d2a;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+.submit-btn:disabled {
+    background: #b3d7ff;
+    cursor: not-allowed;
+}
+
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

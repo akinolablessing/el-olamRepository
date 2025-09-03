@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["http://localhost:5173", "https://el-olam-a7d34.web.app"],
+    "method": ["GET", "POST", "PUT", "HEAD", "DELETE"],
+    "maxAgeSeconds": 3600,
+    "responseHeader": ["Content-Type", "x-goog-meta-*"]
+  }
+]
