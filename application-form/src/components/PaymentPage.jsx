@@ -11,7 +11,8 @@ const PaymentPage = () => {
         { bank: "UBA", accountName: "EL-OLAM SPECIAL HOME AND REHABILITATION CENTER", accountNumber: "1024139996" },
         { bank: "GTBank", accountName: "EL-OLAM SPECIAL HOME AND REHABILITATION CENTER", accountNumber: "0640580558" },
         { bank: "DOLLAR", accountName: "EL-OLAM SPECIAL HOME AND REHABILITATION CENTER", accountNumber: "5073175611" },
-        { bank: "POUNDS", accountName: "EL-OLAM SPECIAL HOME AND REHABILITATION CENTER", accountNumber: "5060994652" }
+        { bank: "POUNDS", accountName: "EL-OLAM SPECIAL HOME AND REHABILITATION CENTER", accountNumber: "5060994652" },
+        {bank: "EURO", accountName: "EL-OLAM SPECIAL HOME AND REHABILITATION CENTER", accountNumber: "508078848"}
     ];
 
     return (
@@ -32,7 +33,10 @@ const PaymentPage = () => {
             </header>
 
             <section className="account-section">
-                <h2>Bank Account Details</h2>
+                <div className="account-header">
+                    <h2>Bank Account Details</h2>
+                    <h2 className="form-fees">Payment Amount &#8358;40,000</h2>
+                </div>
                 <table className="account-table">
                     <thead>
                     <tr>

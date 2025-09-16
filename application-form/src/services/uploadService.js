@@ -18,17 +18,28 @@ export async function uploadReceipt(file, parentName, parentEmail) {
             file_link: fileURL
         };
 
-        // console.log("Sending email with params:", templateParams);
 
         await emailjs.send(
             import.meta.env.VITE_APP_EMAILS_SERVICE_ID,
             import.meta.env.VITE_APP_EMAILS_TEMPLATE_ID,
             templateParams
         );
+        const adminParams ={
+            parent_name: parentName,
+            parent_email: parentEmail,
+            file_name: file.name,
+            file_link: fileURL,
+            admin_email:"elolamspecialandrehabilitation@gmail.com",
+        };
+        await emailjs.send(
+            import.meta.env.VITE_APP_EMAILS_SERVICE_ID,
+            import.meta.env.VITE_APP_EMAILS_TEMPLATE_ADMIN_ID,
+            adminParams
+        );
 
         return {
             success: true,
-            message: "Receipt sent successfully via email!",
+            message: "Receipt sent to parent and admin successfully!",
         };
     } catch (error) {
         console.error("Error in uploadReceipt: ", error);

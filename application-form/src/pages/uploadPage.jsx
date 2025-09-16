@@ -5,15 +5,19 @@ import { Toaster } from "react-hot-toast";
 import "../styles/index.css";
 import logo from "../assets/WhatsApp_Image_2025-08-29_at_15.54.50_068a4ff8-removebg-preview (1).png";
 import {uploadReceipt} from "../services/uploadService.js";
+import ReceiptSuccessScreen  from "../components/receiptSuccessScreen.jsx";
 
 export default function UploadPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [studentName, setStudentName] = useState("");
 
     const handleUpload = async (file, parentName, parentEmail) => {
         setIsSubmitting(true);
         try {
             await uploadReceipt(file, parentName, parentEmail);
-            alert("Receipt sent successfully!");
+            setStudentName(parentName);
+            setShowSuccess(true);
         } catch (error) {
             console.error("Error sending receipt:", error);
             alert("Failed to send receipt. Please try again.");
@@ -36,6 +40,12 @@ export default function UploadPage() {
                 />
                 <Toaster position="top-right" reverseOrder={false}/>
             </div>
+            {showSuccess && (
+                <ReceiptSuccessScreen
+                    studentName={studentName}
+                    onComplete={() => setShowSuccess(false)}
+                />
+            )}
         </div>
     );
 }

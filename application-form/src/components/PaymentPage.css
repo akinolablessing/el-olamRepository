@@ -1,4 +1,3 @@
-/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,7 @@
     font-family: Arial, sans-serif;
 }
 
-/* Container */
+
 .payment-page {
     background: #f9f9f9;
     min-height: 100vh;
@@ -62,11 +61,28 @@
     margin-bottom: 20px;
 }
 
-.account-section h2 {
-    font-size: 18px;
-    color: #2d3e96;
+
+
+.account-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 15px;
 }
+
+.account-header h2 {
+    font-size: 18px;
+    color: #2d3e96;
+    margin: 0;
+}
+
+.account-header .form-fees {
+    font-size: 16px;
+    color: red;
+    font-weight: 500;
+    margin: 0;
+}
+
 
 .account-table {
     width: 100%;
@@ -125,4 +141,7 @@
     .account-table td {
         font-size: 14px;
     }
+
+
 }
+

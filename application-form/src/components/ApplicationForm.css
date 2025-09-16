@@ -1,0 +1,290 @@
+
+.form-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: #333;
+}
+
+
+.form-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.logo-section .logo {
+    width: 80px;
+    height: auto;
+}
+
+.header-text {
+    flex: 1;
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3e96;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.header-text .cac-number {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.header-text .contact-info {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+
+.header-text .subtitle {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #444;
+}
+
+.passport-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passport-placeholder {
+    width: 90px;
+    height: 110px;
+    border: 2px dashed #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+}
+
+.passport-preview {
+    width: 90px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.passport-box input[type="file"] {
+    font-size: 0.8rem;
+}
+
+/* ================================
+   PROGRESS ARROWS
+================================ */
+.progress-arrows {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.step-pill {
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.step-pill:hover {
+    background: #e9f0ff;
+    border-color: #2d3e96;
+    color: #2d3e96;
+}
+
+.step-pill.active {
+    background: #2d3e96;
+    color: #fff;
+    border-color: #2d3e96;
+    font-weight: 600;
+}
+
+.form-card {
+    background: #fafafa;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3e96;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.section h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem 1.5rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 0.95rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2d3e96;
+    box-shadow: 0 0 0 3px rgba(45, 62, 150, 0.2);
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.radio-group,
+.inline-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.radio-group span {
+    margin-right: 0.5rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.signature-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.signature-preview {
+    width: 120px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.nav-btn,
+.submit-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn {
+    background: #f2f2f2;
+    color: #333;
+}
+
+.nav-btn:hover {
+    background: #e2e2e2;
+}
+
+.submit-btn {
+    background: #2d3e96;
+    color: #fff;
+}
+
+.submit-btn:hover {
+    background: #24327a;
+}
+
+
+@media (max-width: 768px) {
+    .form-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .progress-arrows {
+        justify-content: center;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-section .logo {
+        width: 60px;
+    }
+
+    .passport-placeholder,
+    .passport-preview {
+        width: 70px;
+        height: 90px;
+    }
+
+    .step-pill {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 0.9rem;
+    }
+}
