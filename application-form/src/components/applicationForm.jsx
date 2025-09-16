@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/WhatsApp_Image_2025-08-29_at_15.54.50_068a4ff8-removebg-preview (1).png";
 import "./ApplicationForm.css";
 import { uploadToCloudinary } from "../services/cloudinaryService.js";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { jsPDF } from "jspdf";
 
 emailjs.init(import.meta.env.VITE_APP_EMAILS_USER_ID_APPLICATION);
