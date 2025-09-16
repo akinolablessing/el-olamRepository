@@ -1,4 +1,4 @@
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import {uploadToCloudinary} from "./cloudinaryService.js";
 
 emailjs.init(import.meta.env.VITE_APP_EMAILS_USER_ID);
