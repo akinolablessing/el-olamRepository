@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import logo from "../assets/WhatsApp_Image_2025-08-29_at_15.54.50_068a4ff8-removebg-preview (1).png";
 import "./ApplicationForm.css";
-import { uploadToCloudinary } from "../services/cloudinaryService.js";
+import { uploadToCloudinary, uploadPdfToCloudinary } from "../services/cloudinaryService.js";
 import emailjs from "@emailjs/browser";
-// import  jsPDF  from "jspdf";
+import { jsPDF } from "jspdf";
+
 
 emailjs.init(import.meta.env.VITE_APP_EMAILS_USER_ID_APPLICATION);
 
@@ -11,7 +12,6 @@ const ApplicationForm = () => {
     const [step, setStep] = useState(1);
 
     const [formData, setFormData] = useState({
-        // Personal
         name: "",
         sex: "",
         dateOfBirth: "",
@@ -23,7 +23,6 @@ const ApplicationForm = () => {
         email: "",
         passport: null,
 
-        // Guardian
         fatherName: "",
         fatherOccupation: "",
         fatherPhone: "",
@@ -35,7 +34,6 @@ const ApplicationForm = () => {
         religion: "",
         whoPaysFees: "",
 
-        // Health
         disabilityAcquired: false,
         disabilityAtBirth: false,
         hearingImpaired: false,
@@ -54,7 +52,6 @@ const ApplicationForm = () => {
             lackOfConcentration: false,
         },
 
-        // Religious Guidance
         religiousGuidance: {
             role: "",
             name: "",
@@ -175,7 +172,6 @@ const ApplicationForm = () => {
             doc.text(`Who pays fees: ${formData.whoPaysFees}`, 10, y);
             y += 10;
 
-            // Health Info
             doc.text("=== Health Info ===", 10, y);
             y += 10;
             Object.entries({
@@ -207,7 +203,6 @@ const ApplicationForm = () => {
                 y += 10;
             });
 
-            // Religious Guidance
             doc.text("=== Religious Guidance ===", 10, y);
             y += 10;
             doc.text(`Role: ${formData.religiousGuidance.role}`, 10, y);
@@ -232,9 +227,8 @@ const ApplicationForm = () => {
 
             const pdfBlob = doc.output("blob");
             const pdfFile = new File([pdfBlob], "application.pdf", { type: "application/pdf" });
-            const pdfUrl = await uploadToCloudinary(pdfFile);
+            const pdfUrl = await uploadPdfToCloudinary(pdfFile);
 
-            // Send emails
             await emailjs.send(
                 import.meta.env.VITE_APP_EMAILS_SERVICE_ID_APPLICATION,
                 import.meta.env.VITE_APP_EMAILS_TEMPLATE_ID_APPLICATION,
@@ -285,7 +279,6 @@ const ApplicationForm = () => {
                 </div>
             </header>
 
-            {/* Progress Arrows */}
             <div className="progress-arrows">
                 {["Personal", "Guardian", "Health", "Religious"].map((label, i) => (
                     <button
@@ -299,9 +292,7 @@ const ApplicationForm = () => {
                 ))}
             </div>
 
-            {/* Form Steps */}
             <form className="form-card" onSubmit={handleSubmit}>
-                {/* STEP 1 - Personal */}
                 {step === 1 && (
                     <section className="section">
                         <h2>PERSONAL DATA</h2>
@@ -323,7 +314,6 @@ const ApplicationForm = () => {
                     </section>
                 )}
 
-                {/* STEP 2 - Guardian */}
                 {step === 2 && (
                     <section className="section">
                         <h2>GUARDIAN</h2>
@@ -342,7 +332,6 @@ const ApplicationForm = () => {
                     </section>
                 )}
 
-                {/* STEP 3 - Health */}
                 {step === 3 && (
                     <section className="section">
                         <h2>HEALTH INFORMATION</h2>
@@ -375,7 +364,6 @@ const ApplicationForm = () => {
                     </section>
                 )}
 
-                {/* STEP 4 - Religious Guidance */}
                 {step === 4 && (
                     <section className="section">
                         <h2>RELIGIOUS GUIDANCE</h2>
@@ -391,7 +379,6 @@ const ApplicationForm = () => {
                     </section>
                 )}
 
-                {/* Navigation */}
                 <div className="navigation">
                     <div className="nav-left">
                         {step > 1 && (

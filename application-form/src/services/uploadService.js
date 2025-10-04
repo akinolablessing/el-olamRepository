@@ -10,7 +10,7 @@ export async function uploadReceipt(file, parentName, parentEmail) {
     try {
         const fileURL = await uploadToCloudinary(file);
         if (!fileURL) throw new Error("Failed to upload file");
-
+        // console.log("SERVICE ID is:", import.meta.env.VITE_APP_EMAILS_SERVICE_ID);
         const templateParams = {
             parent_name: parentName,
             parent_email: parentEmail,

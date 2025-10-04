@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Upload, File, X, Loader2 } from "lucide-react";
 import "./FileUpload.css";
-import { useNavigate } from 'react-router-dom';
 
 
 export default function FileUpload({ onUpload, isSubmitting, acceptedTypes, maxSize }) {
